@@ -86,7 +86,8 @@ function renderCard() {
     if (h.done) { tp += h.par; ty += h.score; done++; }
   });
   head.insertAdjacentHTML("beforeend", `<th scope="col">Total</th>`);
-  par.insertAdjacentHTML("beforeend", `<td>${done ? tp : "·"}</td>`);
+  const known = round.every((h) => h.par != null);
+  par.insertAdjacentHTML("beforeend", `<td>${known ? round.reduce((n, h) => n + h.par, 0) : "·"}</td>`);
   you.insertAdjacentHTML("beforeend", `<td>${done ? `${ty} (${rel(ty, tp)})` : ""}</td>`);
 }
 
@@ -150,15 +151,15 @@ function update() {
   $("#slop-fill").classList.toggle("green", a.slop <= GREEN);
   const s = strokes(h.original, h.text);
   $("#strokes").textContent = s;
-  $("#par-hint").textContent = `Par ${h.par}`;
+  $("#par-hint").textContent = `· par ${h.par}`;
 
   const items = a.hits.map(
     (hit, i) =>
-      `<li tabindex="0" data-i="${i}"><span class="kind ${hit.rule.kind}">${KIND_LABEL[hit.rule.kind]}</span><div><b>${esc(hit.rule.name)}</b> · <q>${esc(hit.text)}</q><p class="tip">${esc(hit.rule.tip)}</p></div></li>`
+      `<li tabindex="0" data-i="${i}"><p><span class="kind ${hit.rule.kind}">${KIND_LABEL[hit.rule.kind]}</span> <b>${esc(hit.rule.name)}</b> · <q>${esc(hit.text)}</q></p><p class="tip">${esc(hit.rule.tip)}</p></li>`
   );
   if (a.rhythm)
     items.push(
-      `<li><span class="kind rough">Rough</span><div><b>Flat rhythm</b> · every sentence is about ${a.rhythm.mean} words<p class="tip">Vary it. A short sentence. Then one long enough to carry a real idea and land somewhere.</p></div></li>`
+      `<li><p><span class="kind rough">Rough</span> <b>Flat rhythm</b> · every sentence is about ${a.rhythm.mean} words</p><p class="tip">Vary it. A short sentence. Then one long enough to carry a real idea and land somewhere.</p></li>`
     );
   $("#hazards").innerHTML = items.length ? items.join("") : `<li><span class="none">Clear. Nothing left that reads like a model.</span></li>`;
   return { a, s };

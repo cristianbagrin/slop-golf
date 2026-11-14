@@ -11,7 +11,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23f6f4ea'/><path d='M11 27V5l12 5-12 5' fill='%23aee90f' stroke='%23071c63' stroke-width='2' stroke-linejoin='round'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <script defer src="https://cdn.jsdelivr.net/npm/@pollinations/ui@0.1.0-alpha.20/dist/connect.js"></script>
 <script type="module" src="app.js"></script>
@@ -44,23 +44,16 @@
       <p class="task" id="hole-task"></p>
     </div>
 
+    <p class="cue">Edit it here. Every word you change, add or cut is a stroke.</p>
     <div class="editor">
       <div class="backdrop" id="backdrop" aria-hidden="true"></div>
       <textarea id="text" spellcheck="true" aria-label="The paragraph. Edit it." disabled></textarea>
     </div>
 
     <div class="meters">
-      <div class="meter">
-        <span class="label">Slop</span>
-        <span class="num" id="slop">–</span>
-        <div class="bar"><div class="fill" id="slop-fill"></div><div class="green-line" title="The green: 20"></div></div>
-        <span class="hint">Green at 20</span>
-      </div>
-      <div class="meter strokes">
-        <span class="label">Strokes</span>
-        <span class="num" id="strokes">0</span>
-        <span class="hint" id="par-hint"></span>
-      </div>
+      <p class="stat"><span class="num" id="slop">–</span> <span class="label">slop <span class="hint">· green at 20</span></span></p>
+      <p class="stat"><span class="num" id="strokes">0</span> <span class="label">strokes <span class="hint" id="par-hint"></span></span></p>
+      <div class="bar" aria-hidden="true"><div class="fill" id="slop-fill"></div><div class="green-line"></div></div>
     </div>
 
     <div class="actions">
