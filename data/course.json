@@ -1,0 +1,27 @@
+[
+ {
+  "hole": "marathon",
+  "model": "openai/gpt-5.4-nano",
+  "text": "Today I completed my first marathon, and it feels surreal to type that. I’m in my forties, and I started this journey with a mix of excitement and doubt, unsure what I could really achieve. The months of training tested my patience, but they also taught me consistency, resilience, and how to trust the process. Crossing that finish line wasn’t just about speed; it was about showing up day after day. Grateful to everyone who encouraged me, and already looking forward to what’s next."
+ },
+ {
+  "hole": "ramen",
+  "model": "x-ai/grok-4.20",
+  "text": "I recently discovered a hidden gem called Tonkotsu Haven that completely exceeded my expectations. Their rich, creamy tonkotsu broth is simmered for 18 hours, delivering incredible depth in every slurp. The perfectly chewy noodles paired with tender chashu and a runny egg created a harmonious bowl that left me craving more. The staff was attentive without being intrusive, and the cozy minimalist interior made for a relaxing solo lunch. I cannot recommend this place enough for anyone seeking authentic, soul-satisfying ramen in the city."
+ },
+ {
+  "hole": "apology",
+  "model": "mistralai/mistral-large-3",
+  "text": "I sincerely apologise for missing our agreed deadline by two days. I understand the importance of timely delivery and take full responsibility for the delay. Rest assured, the project is now complete and I’ve taken steps to ensure this doesn’t happen again. I truly value our partnership and appreciate your patience. The final work is attached, and I’d be happy to discuss any adjustments or next steps at your convenience. Thanks for your understanding—I’m committed to making this right."
+ },
+ {
+  "hole": "toast",
+  "model": "minimax/minimax-m3.1-flash",
+  "text": "To the happy couple, and to my sister, who taught me long ago what patience looks like. I've watched you two turn ordinary Tuesdays into something worth remembering, and I've watched this family become stronger because you found each other. May your years together be full of quiet mornings, loud laughter, and the kind of love that never needs announcing. Please raise your glasses to a marriage built on friendship, and to the parents who made this day possible. I'm so lucky to be here, and so happy for you both."
+ },
+ {
+  "hole": "update",
+  "model": "z-ai/glm-5.3-flash",
+  "text": "Hi team, a quick but important heads-up: the Atlas launch is sliding by one week, with the new go-live set for the 14th. A third-party data integration hit a snag during final testing, and rather than ship something shaky, we're using the extra days to stabilize it and finish QA properly. The good news: design, docs, and comms assets are done, so the buffer only touches engineering. I'll share a revised checklist tomorrow morning. Thanks for the flexibility and focus — ping me with any questions anytime, even between subway stops."
+ }
+]

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Slop Golf</title>
+<meta name="description" content="A writing game about the LLM voice. A model writes a paragraph; you edit it until it sounds like a person. Fewest words changed wins.">
+<meta property="og:title" content="Slop Golf">
+<meta property="og:description" content="A model writes a paragraph. You edit it until it sounds like a person. Fewest words changed wins.">
+<meta property="og:image" content="https://slop-golf.pollinations.app/screenshot.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23f6f4ea'/><path d='M11 27V5l12 5-12 5' fill='%23aee90f' stroke='%23071c63' stroke-width='2' stroke-linejoin='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script defer src="https://cdn.jsdelivr.net/npm/@pollinations/ui@0.1.0-alpha.20/dist/connect.js"></script>
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>Slop Golf</h1>
+    <p class="lede">A model writes a paragraph. You edit it until it sounds like a person wrote it. Strokes are words changed, so the fewest wins. The tells of the LLM voice are the hazards.</p>
+  </div>
+  <div class="connect">
+    <polli-connect app-key="APP_KEY_PLACEHOLDER" budget="2" expiry="30" permissions="profile"></polli-connect>
+    <p class="mode" id="mode">Playing the free practice course. Connect to play fresh holes written live by five models.</p>
+  </div>
+</header>
+
+<main>
+  <table class="card" aria-label="Scorecard">
+    <thead><tr><th scope="row">Hole</th></tr></thead>
+    <tbody>
+      <tr class="par"><th scope="row">Par</th></tr>
+      <tr class="you"><th scope="row">You</th></tr>
+    </tbody>
+  </table>
+
+  <section class="hole" id="hole">
+    <div class="hole-head">
+      <p class="hole-no" id="hole-no">Hole 1</p>
+      <h2 id="hole-title">Loading</h2>
+      <p class="task" id="hole-task"></p>
+    </div>
+
+    <div class="editor">
+      <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+      <textarea id="text" spellcheck="true" aria-label="The paragraph. Edit it." disabled></textarea>
+    </div>
+
+    <div class="meters">
+      <div class="meter">
+        <span class="label">Slop</span>
+        <span class="num" id="slop">–</span>
+        <div class="bar"><div class="fill" id="slop-fill"></div><div class="green-line" title="The green: 20"></div></div>
+        <span class="hint">Green at 20</span>
+      </div>
+      <div class="meter strokes">
+        <span class="label">Strokes</span>
+        <span class="num" id="strokes">0</span>
+        <span class="hint" id="par-hint"></span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="button" id="putt" class="primary" disabled>Putt</button>
+      <button type="button" id="reset" disabled>Reset hole</button>
+      <button type="button" id="concede" class="quiet" disabled>Pick it up</button>
+    </div>
+    <p class="status" id="status" role="status"></p>
+
+    <div class="result" id="result" hidden></div>
+
+    <h3 class="hazards-title">Hazards on this hole</h3>
+    <ul class="hazards" id="hazards"></ul>
+  </section>
+
+  <section class="summary" id="summary" hidden></section>
+</main>
+
+<footer class="foot">
+  <p>The hazards come from a ghostwriter's checklist for de-AI-ing prose: structure first (negated antithesis, rule of three, trailing -ing clauses), then stock phrases and tell-word clusters. One hit means little; density is the fingerprint. The checks are rules, not a detector, so they miss things and sometimes flag a line a person would write.</p>
+  <p>Made with <a href="https://pollinations.ai/?ref=slop-golf">pollinations.ai</a> · <a href="https://github.com/cristianbagrin/slop-golf">Source</a></p>
+</footer>
+</body>
+</html>

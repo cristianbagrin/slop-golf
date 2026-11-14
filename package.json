@@ -1,0 +1,11 @@
+{
+  "name": "slop-golf",
+  "private": true,
+  "type": "module",
+  "description": "A writing game about the LLM voice. Built on Pollinations.",
+  "license": "MIT",
+  "scripts": {
+    "course": "node tools/gen-course.mjs",
+    "calibrate": "node tools/calibrate.mjs"
+  }
+}
